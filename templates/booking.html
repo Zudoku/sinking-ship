@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>HEL-TKU fares</title>
+    </head>
+    <body>
+
+    <h1> Book a trip between Helsinki and Turku</h1>
+
+    <form action="/confirm" method="POST">
+        {% csrf_token %}
+        <input type="radio" id="ht" name="trip" value="ht">
+        <label for="ht">Helsinki -> Turku</label><br>
+        <input type="radio" id="th" name="trip" value="th">
+        <label for="th">Turku -> Helsinki</label><br>
+
+        <label for="day">Day of travel:</label>
+        <input type="date" id="day" name="day">   
+
+        <p> Price is 50 € per trip</p>
+
+        <label for="credit">Credit card for payment:</label>
+        <input type="password" id="credit" name="credit">     
+    
+        <p><input type="submit" value="Continue" /></p>
+    </form>
+
+        
+    </body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>HEL-TKU fares</title>
+    </head>
+    <body>
+        <div>
+            <h1> Your planned trips</h1>
+            {{ trips|length }}
+            <ul>
+
+                {% for trip in trips %}
+                <li>{{trip.trip}}</li>
+    
+                {% endfor %}
+            </ul>
+        </div>
+    </body>
+</html>

@@ -15,7 +15,25 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from ship.views import homeView, bookingView, confirmView, faresView
+from django.conf import settings
+from django.urls import re_path
+from django.urls import path, include
+from django.views.static import serve
+import os
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('', homeView, name='home'),
+    path('booking', bookingView, name='booking'),
+    path('confirm', confirmView, name='confirm'),
+    path('fares', faresView, name='fares'),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
+
+# Flaw 1.
+
+urlpatterns += [
+        re_path(r'^static/(?P<path>.*)$', serve, {
+            'document_root': os.path.join(settings.BASE_DIR, 'ship')
+        }),
+    ]
