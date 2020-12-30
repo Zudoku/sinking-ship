@@ -16,8 +16,8 @@ def homeView(request):
 
 @login_required
 def bookingView(request):
-
-    return render(request, 'booking.html')
+    context = { 'acc_id' : request.user.id }
+    return render(request, 'booking.html', context)
 
 @login_required
 def faresView(request):
