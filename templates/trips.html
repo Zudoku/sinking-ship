@@ -5,15 +5,16 @@
     </head>
     <body>
         <div>
-            <h1> Your planned trips</h1>
-            {{ trips|length }}
+            <h1> Your planned trips: {{ trips|length }}</h1>
+            <p> Trip code: th  = Turku Helsinki</p>
+            <p> Trip code: ht  = Helsinki-Turku</p>
+            {% for trip in trips %}
             <ul>
-
-                {% for trip in trips %}
-                <li>{{trip.trip}}</li>
-    
-                {% endfor %}
+                <li>Trip code: {{trip.trip}}</li>
+                <li>Trip date: {{trip.date}}</li>
+                <li>Trip payment from credit card: {{trip.creditcard}}</li>
             </ul>
+            {% endfor %}
         </div>
     </body>
 </html>

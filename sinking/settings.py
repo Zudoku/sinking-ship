@@ -28,6 +28,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Flaw 4.
+LOGGING_CONFIG = None
+
 
 # Application definition
 
